@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AniSong Random!</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.discordapp.com/attachments/832979613969940480/943161798369091656/04f3cb963c5ca1342161f86d2d45a8df.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+    <style>
+        body {
+            --ci1:#191919;
+            --ci2:#52006A;
+            --ci3:#064635;
+            --ci4:#8C0000;
+            --ci5:#161853;
+            --ci6:#3DB2FF;
+            --ci7:#FFA6D5;
+            background-color: #191919;
+            color: #ECDBBA;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+        .bg-ci1 {
+        background-color: var(--ci1) !important;
+        }
+        .bg-ci2 {
+        background-color: var(--ci2) !important;
+        }
+        .bg-ci3 {
+        background-color: var(--ci3) !important;
+        }
+        .bg-ci4 {
+        background-color: var(--ci4) !important;
+        }
+        .bg-ci5 {
+        background-color: var(--ci5) !important;
+        }
+        .bg-ci6 {
+        background-color: var(--ci6) !important;
+        }
+        .bg-ci7 {
+        background-color: var(--ci7) !important;
+        }
+        .container {
+            text-align: center;
+        }
+        .header {
+            margin-top: 100px;
+            font-family: 'Mochiy Pop P One', sans-serif;
+            font-size: 32px;
+        }
+        #button_r {
+            background-color: #C84B31;
+            border: none;
+            padding: 0px 32px;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 5px;
+            display: inline-block;
+            font-size: 16px;
+            font-family: 'Mochiy Pop P One', sans-serif;
+            border-radius: 10px;
+            transition: all 0.3s ease-in-out;
+        }
+        .pattern-color:hover{
+            transform:scale(1.1);
+        }
+        #button_r:hover{
+            transform:scale(1.1);
+        }
+        .theme {
+            margin-top: 25px;
+            font-family: 'Mochiy Pop P One', sans-serif;
+            font-size: 25px;
+        }
+        .outSong {
+            margin-top: 0px;
+            font-family: 'Mochiy Pop P One', sans-serif;
+            font-size: 25px;
+        }
+        .weedeo {
+            margin-top: 25px;
+            font-family: 'Mochiy Pop P One', sans-serif;
+            font-size: 20px;
+        }
+        #pattern {
+            margin-top: 25px;
+            display: flex;
+            width: max-content;
+            margin: auto;
+        }
+        .pattern-color{
+            width: 64px;
+            height: 64px;
+            background: gray;
+            border-radius: 60px;
+            margin-left: 1.5em;
+            border: 5px solid #fff;
+            transition: all 0.3s ease-in-out;
+        }
+        #snow{
+            width: 1vw;
+            height: 1vw;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 1vw;
+            animation: snowfall 10s infinite linear;
+        }
+        #snow1{
+            width: 1vw;
+            height: 1vw;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 50vw;
+            animation: snowfall 12s infinite linear;
+        }
+        #snow2{
+            width: 1vw;
+            height: 1vw;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 23vw;
+            animation: snowfall 30s infinite linear;
+        }
+        #snow3{
+            width: 1vw;
+            height: 1vw;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 100vw;
+            animation: snowfall 18s infinite linear;
+        }
+        #snow4{
+            width: 1vw;
+            height: 1vw;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 68vw;
+            animation: snowfall 17s infinite linear;
+        }
+        #snow5{
+            width: 1vw;
+            height: 1vw;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 76vw;
+            animation: snowfall 8s infinite linear;
+        }
+        #snow6{
+            width: 1vw;
+            height: 1vw;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 42vw;
+            animation: snowfall 9s infinite linear;
+        }
+        #snow7{
+            width: 1vw;
+            height: 1vw;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 18vw;
+            animation: snowfall 20s infinite linear;
+        }
+        #snow8{
+            width: 1vw;
+            height: 1vw;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 18vw;
+            animation: snowfall 20s infinite linear;
+        }
+        #snow9{
+            width: 1vw;
+            height: 1vw;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 85vw;
+            animation: snowfall 5s infinite linear;
+        }
+        #snow10{
+            width: 1vw;
+            height: 1vw;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 10vw;
+            animation: snowfall 8s infinite linear;
+        }
+        #snow11{
+            width: 1vw;
+            height: 1vw;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 95vw;
+            animation: snowfall 10s infinite linear;
+        }
+        #snow12{
+            width: 1vw;
+            height: 1vw;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 42vw;
+            animation: snowfall 32s infinite linear;
+        }
+        #snow13{
+            width: 1vw;
+            height: 1vw;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 65vw;
+            animation: snowfall 26s infinite linear;
+        }
+        #snow14{
+            width: 1vw;
+            height: 1vw;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 89vw;
+            animation: snowfall 40s infinite linear;
+        }
+        #snow15{
+            width: 1vw;
+            height: 1vw;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 40vw;
+            animation: snowfall 24s infinite linear;
+        }
+        #snow16{
+            width: 1vw;
+            height: 1vw;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 5vw;
+            animation: snowfall 40s infinite linear;
+        }
+        #snow17{
+            width: 1vw;
+            height: 1vw;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 33vw;
+            animation: snowfall 33s infinite linear;
+        }
+        #snow18{
+            width: 1vw;
+            height: 1vw;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 80vw;
+            animation: snowfall 33s infinite linear;
+        }
+        #snow19{
+            width: 1vw;
+            height: 1vw;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 73vw;
+            animation: snowfall 7s infinite linear;
+        }
+        #snow20{
+            width: 1vw;
+            height: 1vw;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 37vw;
+            animation: snowfall 5s infinite linear;
+        }
+        @keyframes snowfall {
+            0%{
+                transform:translate3d(0, -15vh, 0);
+            }
+            100%{
+                transform:translate3d(0, 110vh, 0);
+            }
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div class="container">
+        <div id="snow"></div>
+        <div id="snow1"></div>
+        <div id="snow2"></div>
+        <div id="snow3"></div>
+        <div id="snow4"></div>
+        <div id="snow5"></div>
+        <div id="snow6"></div>
+        <div id="snow7"></div>
+        <div id="snow8"></div>
+        <div id="snow9"></div>
+        <div id="snow10"></div>
+        <div id="snow11"></div>
+        <div id="snow12"></div>
+        <div id="snow13"></div>
+        <div id="snow14"></div>
+        <div id="snow15"></div>
+        <div id="snow16"></div>
+        <div id="snow17"></div>
+        <div id="snow18"></div>
+        <div id="snow19"></div>
+        <div id="snow20"></div>
+        <div class="header">
+            <h1>AniSong Random!</h1>
+        </div>
+        <div class="outSong" id="outSong">
+            <p>Let's have fun!</p>
+        </div>
+        <div class="weedeo" id="weedeo">
+            <img src="https://c.tenor.com/ofrtZI70A44AAAAC/tokisaki-kurumi.gif">
+        </div>
+        <div id="button_r">
+            <p>GO!</p>
+        </div>
+        <div class="theme">
+            <p>Change theme</p>
+        </div>
+        <section id="pattern">
+            <div class="pattern-color bg-ci1" id="pattern-ci1"></div>
+            <div class="pattern-color bg-ci2" id="pattern-ci2"></div>
+            <div class="pattern-color bg-ci3" id="pattern-ci3"></div>
+            <div class="pattern-color bg-ci4" id="pattern-ci4"></div>
+            <div class="pattern-color bg-ci5" id="pattern-ci5"></div>
+            <div class="pattern-color bg-ci6" id="pattern-ci6"></div>
+            <div class="pattern-color bg-ci7" id="pattern-ci7"></div>
+        </section>
+    </div>
+
+
+
+    <script>
+        var btn = document.querySelector("#button_r")
+        var out = document.getElementById("outSong")
+        var vdo = document.getElementById("weedeo")
+        function getSong(){
+            var songName= [
+                'yama - Oz (Ranking of Kings)',
+                'LiSA - yuke (SAO)',
+                'The Peggies - Kimi No Sei (Bunny Girl Senpai)',
+                'ALI - Wild Side (Beast Star SS1)',
+                'RADWIMPS - We\'ll Be Alright (Weathering With You)',
+                'BiSH - in case… (Godzilla s.p.)',
+                'LiSA - Homura (Kimetsu no Yaiba The Movie: Mugen Train)',
+                'BRADIO - Flyers (Dead Parades)',
+                'amazarashi - KYOKAISEN (86 - Eighty Six - Part 2)',
+                'HITORIE - 3 min 29 sec (86 - Eighty Six - Part 1)',
+                'YOASOBI - Monster (Beast Star SS2)',
+                'ALI - LOST IN PARADISE feat.AKLO (Jujutsu Kaisen)',
+                'Vaundy - Hadaka No Yuusha (Ranking of Kings)',
+                'Aimer - I Beg You (Fate/stay night: Heaven\'s Feel II. Lost Butterfly)',
+                'Minami - Kawaki wo Ameku (Domestic na Kanojo)',
+                'Freddie Mercury - The Great Pretender (Great Pretender)',
+                'Cö shu Nie - Zettai Zetsumei (The Promised Neverland)',
+                'Official髭男dism - Cry Baby (TokyoRevenger)',
+                'Bocchan & Alice - Mangetsu to Silhouette no Yoru (The duke of death and his maid)',
+                'Spira Spica - Sansan Days (My Dress-Up Darling)',
+                'Akase Akari - Koi no Yukue(My Dress-Up Darling)',
+                'SiM - The Rumbling (Attack on The Final Season Part2)',
+                'sumika - fiction (Wotaku ni Koi wa Muzukashii)',
+                'ReoNa - Nai Nai (Shadows House)',
+                'yama - mahi (2.43)',
+                'fhána - aozora no rhapsody (Miss Kobayashi\'s Dragon Maid)',
+                'Frederic - Kanashii Ureshii (Koi to Uso)',
+                'Cidergirl - Cinderella (Komi Can\'t Communicate)',
+                'EMPiRE - HON-NO (High-Rise Invasion)',
+                'sumika - Shake ＆ Shake (Bishounen Tanteidan)',
+                'bicaso feat.Gen Kakon - Dive Back In Time (時光代理人 -LINK CLICK-)',
+                'Kenshi Yonezu - Peace Sign (My Hero Academia)',
+                'Utada Hikaru - One Last Kiss (Evangelion)',
+                'Hoshino Gen - Doraemon (Doraemon)',
+
+
+            ];
+            var songVideo=[
+                'Odv-zbpy-Y8',
+                'Ff7k1zxBe1I',
+                '-GoZOCNSIYw',
+                'bgo9dJB_icw',
+                't6Z0oSm4F-o',
+                'eXd4ZwDivsc',
+                'qVdRv2ERur4',
+                '9wh8FgsEtNQ',
+                'gB3gUq5A1W0',
+                '8lgTi7tqX3k',
+                'dy90tA3TT1c',
+                'tLsJQ5srVQA',
+                'FT0GKCuSaW0',
+                'pCC6qbAnX00',
+                '0YF8vecQWYs',
+                'mLRjFWDGs1g',
+                '6WNk9yMNovs',
+                '2qbHikwRimU',
+                's0jXU1OwG7I',
+                '8pGN2YEMXHo',
+                'sRS8Otwbo7g',
+                '2S4qGKmzBJE',
+                'XjHqfhOcK_0',
+                'M8LwhRkNaSQ',
+                '2By3feOVw20',
+                'maKok2RItxM',
+                'vn7vfza-6fQ',
+                'xHlx3rx5Bew',
+                'NzkH-tvdQPQ',
+                'jMAqzd9CgQM',
+                'EBimS-0GQH0',
+                '1oMxrHXzOsY',
+                '0Uhh62MUEic',
+                'ypRTzt1KrF8',
+
+            ]
+            var songNum = Math.floor(Math.random() * songName.length);
+            var vib = '<div id="video"><iframe width="1280" height="720" src="http://www.youtube.com/embed/' + songVideo[songNum] + '?autoplay=1&controls=1&autoplay=1&mute=1" frameborder="0" allowfullscreen></iframe></div>';
+            out.textContent = songName[songNum];
+            vdo.innerHTML = vib;
+        }
+        btn.addEventListener("click", getSong);
+
+
+        var ci1 = document.getElementById("pattern-ci1")
+        ci1.addEventListener("click", function(){
+            document.body.style.backgroundColor="#191919";
+            document.body.style.color="#ECDBBA";
+            button_r.style.backgroundColor="#C84B31";
+            
+        });
+        var ci2 = document.getElementById("pattern-ci2")
+        ci2.addEventListener("click", function(){
+            document.body.style.backgroundColor="#52006A";
+            document.body.style.color="#FFA900";
+            button_r.style.backgroundColor="#CD113B";
+            
+        });
+        var ci3 = document.getElementById("pattern-ci3")
+        ci3.addEventListener("click", function(){
+            document.body.style.backgroundColor="#064635";
+            document.body.style.color="#F4EEA9";
+            button_r.style.backgroundColor="#519259";
+        });
+        var ci4 = document.getElementById("pattern-ci4")
+        ci4.addEventListener("click", function(){
+            document.body.style.backgroundColor="#8C0000";
+            document.body.style.color="#FFBE0F";
+            button_r.style.backgroundColor="#FA1E0E";
+        });
+        var ci5 = document.getElementById("pattern-ci5")
+        ci5.addEventListener("click", function(){
+            document.body.style.backgroundColor="#161853";
+            document.body.style.color="#EC255A";
+            button_r.style.backgroundColor="#FAEDF0";
+        });
+        var ci6 = document.getElementById("pattern-ci6")
+        ci6.addEventListener("click", function(){
+            document.body.style.backgroundColor="#3DB2FF";
+            document.body.style.color="#FF2442";
+            button_r.style.backgroundColor="#FFB830";
+        });
+        var ci7 = document.getElementById("pattern-ci7")
+        ci7.addEventListener("click", function(){
+            document.body.style.backgroundColor="#FFA6D5";
+            document.body.style.color="#FFF7E0";
+            button_r.style.backgroundColor="#8E0505";
+        });
+    </script>
+</body>
+</html>
